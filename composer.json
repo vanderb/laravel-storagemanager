@@ -1,0 +1,24 @@
+{
+    "name": "vanderb/laravel-storagemanager",
+    "description": "File-Based Storage-Manager (without db)",
+    "keywords": ["laravel", "storage"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Freerk van Zeijl",
+            "email": "freerk.vz@googlemail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "illuminate/support": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vanderb\\Storagemanager\\": ["src/"]
+        },
+        "classmap": []
+    },
+
+    "minimum-stability": "dev"
+}
