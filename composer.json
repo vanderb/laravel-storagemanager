@@ -20,5 +20,14 @@
         "classmap": []
     },
 
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Vanderb\\Storagemanager\\StoragemanagerServiceProvider"
+            ],
+            "aliases": {}
+        }
+    }
 }
