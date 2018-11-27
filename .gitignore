@@ -4,3 +4,6 @@ coverage/
 /nbproject/private/
 /nbproject
 /.vscode
+/node_modules
+mix-manifest.json
+package.lock
