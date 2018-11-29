@@ -16,13 +16,13 @@ class StoragemanagerServiceProvider extends ServiceProvider {
             //__DIR__.'/../resources/views' => resource_path('views/vendor/storagemanager'),
 
             //publish storagemanager js assets
-            __DIR__.'/../../dist' => public_path('vendor/laravel-storagemanager'),
+            __DIR__.'/../dist' => public_path('vendor/laravel-storagemanager'),
         ]);
 
         //load routes
-        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+        $this->loadRoutesFrom(__DIR__.'/routes/web.php');
         //views
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'storagemanager');
+        $this->loadViewsFrom(__DIR__.'/resources/views', 'storagemanager');
     }
 
     /**
@@ -32,7 +32,7 @@ class StoragemanagerServiceProvider extends ServiceProvider {
     {
         //Merge config
         $this->mergeConfigFrom(
-            __DIR__.'/../config/storagemanager.php', 'storagemanager'
+            __DIR__.'/config/storagemanager.php', 'storagemanager'
         );
 
         // Register new storage-disk
