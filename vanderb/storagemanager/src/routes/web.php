@@ -1,16 +1,14 @@
 <?php
 
-Route::group([
-        'middleware'=>['web','auth'],
-        'namespace'=>'Vanderb\Storagemanager\Controllers',
-        'prefix'=>'storagemanager','as'=>'storagemanager::'
+Route::group(
+    [
+        'middleware' => ['web', 'auth'],
+        'namespace' => 'Vanderb\Storagemanager\Controllers',
+        'prefix' => 'storage-manager', 'as' => 'storagemanager::'
     ], 
-    function(){
-        Route::group(['prefix'=>'api', 'as' => 'api'], function() {
-            Route::get('path/get', 'StoragemanagerController@getByPath');
-        });
-
-        Route::get('/', 'StoragemanagerController@index');
-        Route::get('/{any}', 'StoragemanagerController@index')->where('any', '.*');
+    function() {
+        // StorageManagerTestRoute
+        Route::get('/', 'StorageManagerController@index')->name('storage-manager');
+        Route::post('/', 'StorageManagerController@handleUpload')->name('storage-manager.upload');
     }
 );

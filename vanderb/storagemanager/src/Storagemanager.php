@@ -93,7 +93,7 @@ class Storagemanager implements StoragemanagerContract {
             'size' => File::size($this->disk->path($file)),
             'mime' => File::mimeType($this->disk->path($file)),
             'url' => $this->disk->url($file),
-            'dimensions' => $this->getPhotoDimensions($this->disk->path($file)),
+            // 'dimensions' => $this->getPhotoDimensions($this->disk->path($file)),
             'last_modified' => Carbon::createFromTimestamp(File::lastModified($this->disk->path($file)))->toDateTimeString(),
             'path' => $file,
         ];

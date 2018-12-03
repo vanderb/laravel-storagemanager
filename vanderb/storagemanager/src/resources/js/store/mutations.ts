@@ -3,29 +3,29 @@ import {reject, dropRight} from 'lodash'
 import router from '../router'
 
 export default {
-    setDirectories(state, directories) { state.directories = directories },
-    setFiles(state, files) { state.files = files },
+    setDirectories(state:any, directories:Array<any>) { state.directories = directories },
+    setFiles(state:any, files:Array<any>) { state.files = files },
 
-    selectFile(state, file) { state.selected.push(file) },
-    unselectFile(state, file) {
-        state.selected = reject(state.selected, (item) => {
+    selectFile(state:any, file:object) { state.selected.push(file) },
+    unselectFile(state: any, file:object) {
+        state.selected = reject(state.selected, (item:object) => {
             return item == file
         });
     },
 
-    selectAll(state) {
+    selectAll(state: any) {
         state.selected = [];
-        state.directories.forEach((dir) => {
+        state.directories.forEach((dir:any) => {
             state.selected.push(dir)
         })
-        state.files.forEach((file) => {
+        state.files.forEach((file:any) => {
             state.selected.push(file)
         })
     }, 
-    unselectAll(state) {
+    unselectAll(state: any) {
         state.selected = [];
     },
-    directoryUp(state) {
+    directoryUp(state: any) {
         //@ts-ignore
         let { routes } = router.options
 
@@ -34,17 +34,13 @@ export default {
         }
 
     },
-    directoryRoot(state) {
+    directoryRoot(state: any) {
         //@ts-ignore
         router.push({path: '/'})
     },
 
-    updateRoutes(state, routes) {
+    updateRoutes(state:any, routes:any) {
         state.lastRoute = routes.last
         state.currentRoute = routes.current
-    },
-
-    changeView(state, view) {
-        state.view = view
     }
 }
