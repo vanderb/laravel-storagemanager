@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <script src="{{ url('vendor/laravel-storagemanager/storagemanager.js') }}"></script>
+    <script src="{{ url('vendor/laravel-storagemanager/storage-manager.js') }}"></script>
 
 </body>
 

@@ -15,7 +15,10 @@ let mix = require('laravel-mix');
 let chunkFilename = 'js/chunks/[name].js';
 
 mix.options({ processCssUrls: false });
-mix.js('src/resources/js/storage-manager.js', 'dist/')
+// while in package development
+mix.setPublicPath('../../../').js('src/resources/js/storage-manager.js', 'public/vendor/laravel-storagemanager/storage-manager.js')
+    // for later publishing
+    // mix.js('src/resources/js/storage-manager.js', 'dist/')
 if(mix.inProduction()) {
     mix.version();
 }

@@ -15,7 +15,7 @@ export default {
 
         state.isLoading = true;
 
-        axios.get('/admin/get-files', request).then(response => {
+        axios.get('api/get-files', request).then(response => {
 
             commit('setDirectories', response.data.directories)
             commit('setFiles', response.data.files)

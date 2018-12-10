@@ -21,6 +21,7 @@ class StoragemanagerServiceProvider extends ServiceProvider {
 
         //load routes
         $this->loadRoutesFrom(__DIR__.'/routes/web.php');
+        $this->loadRoutesFrom(__DIR__.'/routes/api.php');
         //views
         $this->loadViewsFrom(__DIR__.'/resources/views', 'storagemanager');
     }

@@ -34660,7 +34660,7 @@ module.exports = function(module) {
             request = { params: { directory: $route.path } };
         }
         state.isLoading = true;
-        __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/admin/get-files', request).then(function (response) {
+        __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('api/get-files', request).then(function (response) {
             commit('setDirectories', response.data.directories);
             commit('setFiles', response.data.files);
             var paths = [];
